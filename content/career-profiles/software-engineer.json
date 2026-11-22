@@ -55,7 +55,23 @@
   "competitionReality": {
     "basis": "Engineering / Tech",
     "signal": "16,04,854 unique candidates for JEE Main 2026, the highest ever",
-    "reality": "Fresher IT hiring fell from ~6 lakh (FY22) to ~1.2 lakh (FY25)"
+    "reality": "Fresher IT hiring fell from ~6 lakh (FY22) to ~1.2 lakh (FY25)",
+    "visual": {
+      "type": "bars",
+      "caption": "Fresher IT hiring",
+      "bars": [
+        {
+          "label": "FY22",
+          "value": 6,
+          "display": "~6 lakh"
+        },
+        {
+          "label": "FY25",
+          "value": 1.2,
+          "display": "~1.2 lakh"
+        }
+      ]
+    }
   },
   "sceneIdeas": [
     "A vague ticket with no designs",

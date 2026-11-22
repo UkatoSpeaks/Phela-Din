@@ -55,7 +55,13 @@
   ],
   "competitionReality": {
     "signal": "~10 lakh students registered with ICAI (2025 report)",
-    "reality": "CA Foundation pass rate ~19–21% per attempt"
+    "reality": "CA Foundation pass rate ~19–21% per attempt",
+    "visual": {
+      "type": "one_in",
+      "n": 5,
+      "what": "pass",
+      "per": "CA Foundation attempts"
+    }
   },
   "sceneIdeas": [
     "The night before the GST filing deadline",

@@ -1,31 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import type { Career } from "@/types/simulation";
-import { CareerCard } from "./CareerCard";
+import { CareerIdCard, type CareerCardData } from "./CareerIdCard";
 
 const ALL = "All";
 const LAUNCH = "Launching first";
 
-interface Props {
-  /** Already sorted for display. */
-  careers: Career[];
-  minutesBySimId: Record<string, number>;
-}
-
-/** Career grid with filter chips: All · Launching first · one chip per category. */
-export function CareerBrowser({ careers, minutesBySimId }: Props) {
+/** Career ID cards with filter chips: All · Launching first · one chip per category. */
+export function CareerBrowser({ cards }: { cards: CareerCardData[] }) {
   const [filter, setFilter] = useState<string>(ALL);
 
-  // Placeholder categories (the demo) don't get their own chip.
-  const categories = [...new Set(careers.filter((c) => c.id !== "sample-career").map((c) => c.category))].sort();
+  // The sample's placeholder category doesn't get its own chip.
+  const categories = [...new Set(cards.filter((c) => c.career.id !== "sample-career").map((c) => c.career.category))].sort();
   const chips = [ALL, LAUNCH, ...categories];
-
-  const visible = careers.filter((c) => {
-    if (filter === ALL) return true;
-    if (filter === LAUNCH) return c.launchWave === 1;
-    return c.category === filter;
-  });
+  const visible = cards.filter(({ career }) =>
+    filter === ALL ? true : filter === LAUNCH ? career.launchWave === 1 : career.category === filter,
+  );
 
   return (
     <>
@@ -38,8 +28,8 @@ export function CareerBrowser({ careers, minutesBySimId }: Props) {
               type="button"
               onClick={() => setFilter(chip)}
               aria-pressed={active}
-              className={`min-h-10 shrink-0 rounded-full border-2 px-4 text-sm font-semibold transition ${
-                active ? "border-terracotta bg-terracotta text-white" : "border-line bg-card text-ink hover:border-saffron"
+              className={`min-h-11 shrink-0 rounded-[var(--radius-control)] border-2 px-4 text-sm font-bold transition ${
+                active ? "border-ink bg-ink text-sheet" : "border-ink/30 bg-sheet hover:border-ink"
               }`}
             >
               {chip}
@@ -47,15 +37,17 @@ export function CareerBrowser({ careers, minutesBySimId }: Props) {
           );
         })}
       </div>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        {visible.map((career) => (
-          <CareerCard
-            key={career.id}
-            career={career}
-            estimatedMinutes={career.simulationId ? minutesBySimId[career.simulationId] : undefined}
-          />
+      <p className="mt-3 text-sm text-ink-2" aria-live="polite">
+        {visible.length} {visible.length === 1 ? "career" : "careers"}
+        {filter === ALL ? "" : ` · ${filter}`}. Tap a card to flip it.
+      </p>
+      <ul className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {visible.map((data) => (
+          <li key={data.career.id}>
+            <CareerIdCard data={data} />
+          </li>
         ))}
-      </div>
+      </ul>
     </>
   );
 }

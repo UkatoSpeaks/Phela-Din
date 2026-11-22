@@ -30,7 +30,7 @@ const accentClass: Record<Accent, string> = {
 };
 
 /** Deterministic barcode bars from a string: same id, same barcode. */
-function Barcode({ value }: { value: string }) {
+export function Barcode({ value }: { value: string }) {
   let seed = 7;
   for (const ch of value) seed = (seed * 33 + ch.charCodeAt(0)) >>> 0;
   const bars: { x: number; w: number }[] = [];

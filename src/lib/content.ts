@@ -24,7 +24,11 @@ export interface ContentBundle {
 
 export interface ValidationResult extends ContentBundle {
   errors: string[];
+  /** Non-blocking: things a human should double-check (e.g. numbers not found in the research). */
+  warnings: string[];
 }
+
+export const RESEARCH_DIR = path.join(CONTENT_DIR, "research");
 
 export class ContentValidationError extends Error {
   constructor(public readonly errors: string[]) {
@@ -165,7 +169,37 @@ export function validateAllContent(): ValidationResult {
     }
   });
 
-  return { errors, careers, simulations, profiles };
+  // --- research cross-check (warnings) ------------------------------------
+  // Drawn odds must use numbers the research actually states.
+  const warnings: string[] = [];
+  let research = "";
+  try {
+    research = fs
+      .readdirSync(RESEARCH_DIR)
+      .filter((f) => f.endsWith(".md"))
+      .map((f) => fs.readFileSync(path.join(RESEARCH_DIR, f), "utf8"))
+      .join("\n");
+  } catch {
+    warnings.push(`${rel(RESEARCH_DIR)}: no research files found; skipped the numbers cross-check`);
+  }
+  if (research) {
+    for (const p of profiles) {
+      const v = p.competitionReality?.visual;
+      if (!v) continue;
+      const where = `${rel(path.join(PROFILES_DIR, `${p.id}.json`))} → competitionReality.visual`;
+      if (v.type === "one_in") {
+        if (!new RegExp(`(1 in ~?${v.n}\\b|every ~?${v.n}\\b)`).test(research)) warnings.push(`${where}.n: "1 in ${v.n}" / "every ${v.n}" not found in the research`);
+      } else if (v.type === "bars") {
+        v.bars.forEach((b, i) => {
+          if (!research.includes(b.display)) warnings.push(`${where}.bars[${i}].display: "${b.display}" not found in the research`);
+        });
+      } else if (!research.includes(`${v.min}–${v.max}%`)) {
+        warnings.push(`${where}: "${v.min}–${v.max}%" not found in the research`);
+      }
+    }
+  }
+
+  return { errors, warnings, careers, simulations, profiles };
 }
 
 // Validated once per process (i.e. once per build), then cached.

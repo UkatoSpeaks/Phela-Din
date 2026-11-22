@@ -56,7 +56,13 @@
   "competitionReality": {
     "basis": "Content creation",
     "signal": "Indian creators grew from ~0.96M (2020) to ~4.12M (2025)",
-    "reality": "Only ~8–10% earn a meaningful income"
+    "reality": "Only ~8–10% earn a meaningful income",
+    "visual": {
+      "type": "percent_range",
+      "min": 8,
+      "max": 10,
+      "of": "Indian creators earn a meaningful income"
+    }
   },
   "sceneIdeas": [
     "Your best video gets 312 views",

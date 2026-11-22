@@ -5,6 +5,7 @@
  * (private mode, quota exceeded, corrupted data) these functions quietly
  * return null / do nothing instead of crashing the page.
  */
+import { CareerTakeSchema, type CareerTake } from "@/types/career-profile";
 import { RunSchema, type Run } from "@/types/simulation";
 
 const KEY_PREFIX = "pehla-din:run:";
@@ -56,5 +57,37 @@ export function clearRun(simulationId: string): void {
     storage.removeItem(keyFor(simulationId));
   } catch (e) {
     console.warn("[storage] Could not clear run", e);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Career "take": a visitor's own reactions on a career file page
+// ---------------------------------------------------------------------------
+
+const TAKE_PREFIX = "pehla-din:take:";
+
+export function emptyTake(careerId: string): CareerTake {
+  return { careerId, skills: [], pros: [], cons: [], moments: {} };
+}
+
+export function loadTake(careerId: string): CareerTake {
+  const storage = getStorage();
+  if (!storage) return emptyTake(careerId);
+  try {
+    const raw = storage.getItem(TAKE_PREFIX + careerId);
+    const parsed = raw ? CareerTakeSchema.safeParse(JSON.parse(raw)) : null;
+    return parsed?.success && parsed.data.careerId === careerId ? parsed.data : emptyTake(careerId);
+  } catch {
+    return emptyTake(careerId);
+  }
+}
+
+export function saveTake(take: CareerTake): void {
+  const storage = getStorage();
+  if (!storage) return;
+  try {
+    storage.setItem(TAKE_PREFIX + take.careerId, JSON.stringify(take));
+  } catch (e) {
+    console.warn("[storage] Could not save take", e);
   }
 }

@@ -63,7 +63,13 @@
   ],
   "competitionReality": {
     "signal": "8,19,372 applied for UPSC CSE 2026; ~5.49 lakh appeared",
-    "reality": "1,016 vacancies, so about 1 post for every ~800 applicants"
+    "reality": "1,016 vacancies, so about 1 post for every ~800 applicants",
+    "visual": {
+      "type": "one_in",
+      "n": 800,
+      "what": "post",
+      "per": "UPSC CSE applicants"
+    }
   },
   "sceneIdeas": [
     "Attempt 3 results day",

@@ -55,7 +55,13 @@
   ],
   "competitionReality": {
     "signal": "22,79,743 registered for NEET UG 2026 (13.3 lakh female, 9.5 lakh male); ~20 lakh appeared",
-    "reality": "~1.37–1.41 lakh MBBS seats for 2026-27, so roughly 1 seat for every 16 registrants"
+    "reality": "~1.37–1.41 lakh MBBS seats for 2026-27, so roughly 1 seat for every 16 registrants",
+    "visual": {
+      "type": "one_in",
+      "n": 16,
+      "what": "MBBS seat",
+      "per": "NEET UG registrants"
+    }
   },
   "sceneIdeas": [
     "Hour 26 of a 36-hour shift",

@@ -22,11 +22,11 @@ interface DeskInfo {
 }
 
 const DESKS: DeskInfo[] = [
-  { id: "engineer", label: "Engineer", caption: "Laptop with stickers, code on screen, a rubber duck for debugging." },
-  { id: "doctor", label: "Doctor", caption: "Prescription pad, stethoscope, a bottle of pills." },
-  { id: "ca", label: "CA", caption: "A stack of client files, a calculator, loose receipts." },
-  { id: "officer", label: "IAS", caption: "A tall pile of tied files, a desk flag, a ringing landline." },
-  { id: "creator", label: "Creator", caption: "Phone on a tripod, a ring light, a mic." },
+  { id: "engineer", label: "Engineer", caption: "Code on the monitor, a clicky mechanical keyboard, and a rubber duck for debugging." },
+  { id: "doctor", label: "Doctor", caption: "A tablet showing an ECG, a stethoscope and a weekly pill organiser." },
+  { id: "ca", label: "CA", caption: "A spreadsheet on the monitor, a calculator and a pile of client files." },
+  { id: "officer", label: "IAS", caption: "A video call on the laptop, a tied stack of files, the desk flag, and a phone that won't stop ringing." },
+  { id: "creator", label: "Creator", caption: "Phone on a tripod in a ring light, a mic on a boom arm, and an edit on the laptop." },
 ];
 
 function Fallback({ id, caption }: { id: AvatarId; caption: string }) {
@@ -75,7 +75,7 @@ export function DeskSection() {
       <h2 id="desk-title" className="mt-1 max-w-[18ch] text-[32px] font-semibold leading-[1.1] sm:text-[44px]">
         Every job has a different desk.
       </h2>
-      <p className="mt-2 max-w-prose text-ink-2">Same Tiffin, same chai. Everything else changes. Pick a job and drag to look around.</p>
+      <p className="mt-2 max-w-prose text-ink-2">Same chai, same phone buzzing, same Tiffin on the desk. Everything else changes. Pick a job and drag to look around.</p>
 
       <div role="group" aria-label="Choose a desk" className="-mx-4 mt-5 flex gap-2 overflow-x-auto px-4 pb-1">
         {DESKS.map((d, i) => (

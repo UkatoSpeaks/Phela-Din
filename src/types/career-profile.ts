@@ -28,6 +28,40 @@ export const PayTableSchema = z.strictObject({
   notes: z.array(nonEmpty).optional(),
 });
 
+/**
+ * A drawable version of the competition reality. Only add one when the
+ * research states the numbers explicitly; `npm run validate` warns if a
+ * number or display string can't be found in content/research/.
+ */
+export const OddsVisualSchema = z.discriminatedUnion("type", [
+  /** "1 MBBS seat for every 16 NEET UG registrants" → 16 figures, one highlighted. */
+  z.strictObject({
+    type: z.literal("one_in"),
+    n: z.number().int().min(2).max(2000),
+    /** Singular thing that's scarce, e.g. "MBBS seat". */
+    what: nonEmpty,
+    /** Plural group it's shared between, e.g. "NEET UG registrants". */
+    per: nonEmpty,
+  }),
+  /** A few comparable values, e.g. fresher hiring FY22 vs FY25. */
+  z.strictObject({
+    type: z.literal("bars"),
+    caption: nonEmpty,
+    bars: z
+      .array(z.strictObject({ label: nonEmpty, value: z.number().positive(), display: nonEmpty }))
+      .min(2)
+      .max(4),
+  }),
+  /** "~8–10% of creators earn a meaningful income" → 100 dots, 8 solid + 2 hatched. */
+  z.strictObject({
+    type: z.literal("percent_range"),
+    min: z.number().min(0).max(100),
+    max: z.number().min(0).max(100),
+    of: nonEmpty,
+  }),
+]);
+export type OddsVisual = z.infer<typeof OddsVisualSchema>;
+
 export const CareerProfileSchema = z.strictObject({
   /** Must match a career id in content/careers.json and the file name. */
   id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
@@ -52,6 +86,7 @@ export const CareerProfileSchema = z.strictObject({
       basis: nonEmpty.optional(),
       signal: nonEmpty,
       reality: nonEmpty,
+      visual: OddsVisualSchema.optional(),
     })
     .optional(),
   sceneIdeas: z.array(nonEmpty).min(1),
@@ -70,3 +105,17 @@ export type CareerProfile = z.infer<typeof CareerProfileSchema>;
 
 /** Careers that don't need a profile (placeholders / demos). */
 export const PROFILE_EXEMPT_CAREER_IDS = ["sample-career"] as const;
+
+/**
+ * A visitor's own reactions on a career file page (saved on their device):
+ * skills they already have, pros/cons that matter to them, and a gut check
+ * on each research moment.
+ */
+export const CareerTakeSchema = z.object({
+  careerId: z.string(),
+  skills: z.array(z.string()),
+  pros: z.array(z.string()),
+  cons: z.array(z.string()),
+  moments: z.record(z.string(), z.enum(["yes", "no"])),
+});
+export type CareerTake = z.infer<typeof CareerTakeSchema>;

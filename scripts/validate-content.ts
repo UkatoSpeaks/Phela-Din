@@ -7,13 +7,18 @@
  */
 import { validateAllContent } from "../src/lib/content";
 
-const { errors, careers, simulations, profiles } = validateAllContent();
+const { errors, warnings, careers, simulations, profiles } = validateAllContent();
 
 if (errors.length > 0) {
   console.error(`\n✖ Found ${errors.length} problem${errors.length === 1 ? "" : "s"} in content/:\n`);
   for (const e of errors) console.error(`  • ${e}`);
   console.error("");
   process.exit(1);
+}
+
+if (warnings.length > 0) {
+  console.warn(`\n⚠ ${warnings.length} warning${warnings.length === 1 ? "" : "s"} (not blocking):\n`);
+  for (const w of warnings) console.warn(`  • ${w}`);
 }
 
 const sceneCount = simulations.reduce((n, s) => n + s.days.reduce((m, d) => m + d.scenes.length, 0), 0);
