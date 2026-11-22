@@ -29,7 +29,8 @@ export default async function CareerDetailPage({ params }: Props) {
   const sim = career.status === "live" && career.simulationId ? getSimulation(career.simulationId) : undefined;
 
   const cta = sim ? (
-    <ButtonLink href={`/sim/${sim.id}`} className="w-full">
+    // prefetch off: the player bundles GSAP, which must not download on non-player pages.
+    <ButtonLink href={`/sim/${sim.id}`} prefetch={false} className="w-full">
       Try the simulation · ~{sim.estimatedMinutes} min
     </ButtonLink>
   ) : (

@@ -13,7 +13,8 @@
     "category": "Technology",
     "shortDescription": "Build and fix software at an Indian startup, with vague tickets, code reviews and Friday-evening bugs included.",
     "status": "coming_soon",
-    "launchWave": 1
+    "launchWave": 1,
+    "heroObject": "sticker_notebook"
   },
   {
     "id": "doctor-mbbs",
@@ -21,7 +22,8 @@
     "category": "Healthcare",
     "shortDescription": "Live a week as a junior resident: long shifts, tough calls and families who need answers.",
     "status": "coming_soon",
-    "launchWave": 1
+    "launchWave": 1,
+    "heroObject": "prescription_pad"
   },
   {
     "id": "chartered-accountant",
@@ -29,7 +31,8 @@
     "category": "Finance",
     "shortDescription": "From articleship to filing deadlines: audits, taxes and clients who hand you a shoebox of receipts.",
     "status": "coming_soon",
-    "launchWave": 1
+    "launchWave": 1,
+    "heroObject": "government_file"
   },
   {
     "id": "civil-services",
@@ -37,7 +40,8 @@
     "category": "Government",
     "shortDescription": "Try the aspirant years and a first posting as an SDM, where floods, files and phone calls all arrive at once.",
     "status": "coming_soon",
-    "launchWave": 1
+    "launchWave": 1,
+    "heroObject": "government_file"
   },
   {
     "id": "content-creator",
@@ -45,7 +49,8 @@
     "category": "Creative",
     "shortDescription": "Script, shoot, post and hope: the real numbers behind building an audience.",
     "status": "coming_soon",
-    "launchWave": 1
+    "launchWave": 1,
+    "heroObject": "phone"
   },
   {
     "id": "ai-ml-engineer",
@@ -53,7 +58,8 @@
     "category": "Technology",
     "shortDescription": "Messy data, models that break in production and managers who think AI can do anything.",
     "status": "coming_soon",
-    "launchWave": 2
+    "launchWave": 2,
+    "heroObject": "sticker_notebook"
   },
   {
     "id": "lawyer",
@@ -69,7 +75,8 @@
     "category": "Creative",
     "shortDescription": "Design screens people actually use, then defend them from 'make the logo bigger'.",
     "status": "coming_soon",
-    "launchWave": 2
+    "launchWave": 2,
+    "heroObject": "sketchbook"
   },
   {
     "id": "cybersecurity-analyst",

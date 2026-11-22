@@ -108,8 +108,8 @@ function ProsCons({ pros, cons }: { pros: string[]; cons: string[] }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       <section className="rounded-3xl bg-leaf/10 p-5">
-        <h2 className="mb-3 font-bold text-leaf">The good</h2>
-        {list(pros, "+", "text-leaf")}
+        <h2 className="mb-3 font-bold text-leaf-deep">The good</h2>
+        {list(pros, "+", "text-leaf-deep")}
       </section>
       <section className="rounded-3xl bg-terracotta/10 p-5">
         <h2 className="mb-3 font-bold text-terracotta">The hard parts</h2>

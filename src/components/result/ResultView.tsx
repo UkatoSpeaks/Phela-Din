@@ -25,7 +25,7 @@ export function ResultView({ sim }: { sim: Simulation }) {
       <div className="flex flex-col gap-4 py-10 text-center">
         <h1 className="text-2xl font-extrabold">No report yet</h1>
         <p className="text-muted">Finish the {sim.title} simulation to see your Fit Report.</p>
-        <ButtonLink href={`/sim/${sim.id}`}>{run ? "Continue where you left off" : "Start the simulation"}</ButtonLink>
+        <ButtonLink href={`/sim/${sim.id}`} prefetch={false}>{run ? "Continue where you left off" : "Start the simulation"}</ButtonLink>
         <ButtonLink href="/careers" variant="secondary">
           Browse careers
         </ButtonLink>

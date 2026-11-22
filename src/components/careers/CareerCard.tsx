@@ -23,7 +23,7 @@ export function CareerCard({ career, estimatedMinutes }: Props) {
       </div>
       <h2 className="mt-2 text-lg font-bold">{career.name}</h2>
       <p className="mt-1 text-sm text-muted">{career.shortDescription}</p>
-      {isLive && estimatedMinutes ? <p className="mt-3 text-xs font-medium text-leaf">~{estimatedMinutes} min simulation</p> : null}
+      {isLive && estimatedMinutes ? <p className="mt-3 text-xs font-medium text-leaf-deep">~{estimatedMinutes} min simulation</p> : null}
     </Link>
   );
 }

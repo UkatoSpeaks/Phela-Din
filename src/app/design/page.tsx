@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Avatar, type AvatarId } from "@/components/home/Avatar";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { IdCard } from "@/components/ui/IdCard";
 import { PaperCard } from "@/components/ui/PaperCard";
 import { Stamp } from "@/components/ui/Stamp";
 import { StickyNote } from "@/components/ui/StickyNote";
 import { IdCardFlip, StampReplay } from "./DesignDemos";
+import { TiffinDemo } from "./TiffinDemo";
 
 export const metadata: Metadata = {
   title: "Design kit · Pehla Din",
@@ -55,7 +57,7 @@ export default function DesignPage() {
           <code className="rounded-[3px] bg-paper-2 px-1.5 py-0.5 text-sm">docs/design.md</code>
         </p>
         <div className="pointer-events-none absolute right-0 top-0 hidden sm:block">
-          <Stamp label="Draft" sub="Stage 1 of 6" tone="margin" rotate={9} size="lg" />
+          <Stamp label="Draft" sub="Stage 2 of 6" tone="margin" rotate={9} size="lg" />
         </div>
       </header>
 
@@ -76,7 +78,7 @@ export default function DesignPage() {
         </ul>
       </Block>
 
-      <Block n="02" title="Type" note="Fraunces for display, Satoshi for everything you read, Caveat for notes only, Tiro for short Hindi labels.">
+      <Block n="02" title="Type" note="Fraunces for display, Hanken Grotesk for everything you read, Caveat for notes only, Tiro for short Hindi labels.">
         <div className="grid gap-6 lg:grid-cols-2">
           <PaperCard>
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-ink-2">Fraunces · display</p>
@@ -84,7 +86,7 @@ export default function DesignPage() {
             <p className="mt-4 font-display text-2xl">Hour 26 of a 36-hour shift</p>
           </PaperCard>
           <PaperCard>
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-ink-2">Satoshi · body &amp; UI</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-ink-2">Hanken Grotesk · body &amp; UI</p>
             <p className="mt-2 text-[17px]">
               Your best video gets 312 views. A brand offers ₹15,000 for a product you don&apos;t like. Month 8 earnings: ₹2,400.
             </p>
@@ -163,7 +165,29 @@ export default function DesignPage() {
         </div>
       </Block>
 
-      <Block n="08" title="Rules" note="From docs/design.md §10. If a screen breaks one, it isn't done.">
+      <Block
+        n="08"
+        title="Tiffin"
+        note="Energy is the food level, stress is steam and a rattling lid, satisfaction is the warm glow. Tap Tiffin to see the numbers."
+      >
+        <TiffinDemo />
+      </Block>
+
+      <Block n="09" title="Cast" note="Original bitmoji-style characters for the launch careers. One family: same head and face, different hair, outfit and prop.">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-5">
+          {(["engineer", "doctor", "ca", "officer", "creator"] as AvatarId[]).map((id) => (
+            <div key={id} className="flex flex-col items-center gap-2">
+              <Avatar id={id} className="w-full max-w-[9rem]" />
+              <div className="flex items-center gap-2">
+                <Avatar id={id} crop="head" excited className="w-12 rounded-full border-2 border-ink bg-paper-2" />
+                <span className="text-xs font-bold uppercase tracking-[0.12em] text-ink-2">{id}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Block>
+
+      <Block n="10" title="Rules" note="From docs/design.md §10. If a screen breaks one, it isn't done.">
         <PaperCard variant="ledger" className="max-w-2xl">
           <ol className="list-decimal pl-5 marker:font-bold">
             <li>No gradients on UI. Violet is stamp ink only.</li>

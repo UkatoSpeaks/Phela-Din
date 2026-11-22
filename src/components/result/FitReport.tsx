@@ -3,7 +3,7 @@ import type { Simulation } from "@/types/simulation";
 import { MeterBar } from "@/components/sim/MeterBar";
 
 const VERDICT_COPY: Record<Verdict, { emoji: string; title: string; tone: string }> = {
-  strong_fit: { emoji: "🌟", title: "Strong fit", tone: "bg-leaf/15 text-leaf" },
+  strong_fit: { emoji: "🌟", title: "Strong fit", tone: "bg-leaf/15 text-leaf-deep" },
   worth_exploring: { emoji: "🧭", title: "Worth exploring", tone: "bg-saffron/20 text-terracotta" },
   probably_not: { emoji: "🤔", title: "Probably not for you", tone: "bg-terracotta/15 text-terracotta" },
 };
@@ -72,7 +72,7 @@ export function FitReport({ report, sim }: Props) {
                 <p className="whitespace-pre-wrap italic">&ldquo;{a.answer}&rdquo;</p>
                 {a.feedback ? (
                   <p className="mt-2">
-                    <span className="font-semibold text-leaf">{a.score !== undefined ? `${a.score}/10 · ` : ""}</span>
+                    <span className="font-semibold text-leaf-deep">{a.score !== undefined ? `${a.score}/10 · ` : ""}</span>
                     {a.feedback}
                   </p>
                 ) : null}

@@ -1,5 +1,4 @@
-import { Caveat, Fraunces, Tiro_Devanagari_Hindi } from "next/font/google";
-import localFont from "next/font/local";
+import { Caveat, Fraunces, Hanken_Grotesk, Tiro_Devanagari_Hindi } from "next/font/google";
 
 /** Display: warm, slightly odd old-press serif. SOFT/WONK axes are set in globals.css. */
 export const fraunces = Fraunces({
@@ -9,17 +8,10 @@ export const fraunces = Fraunces({
   display: "swap",
 });
 
-/**
- * Body/UI: Satoshi (Indian Type Foundry, ITF Free Font License).
- * Self-hosted, unmodified files as the licence requires (no subsetting or conversion).
- * If this repo ever becomes public, switch to the Fontshare API (see docs/design.md §2).
- */
-export const satoshi = localFont({
-  src: [
-    { path: "./fonts/satoshi/Satoshi-Variable.woff2", weight: "300 900", style: "normal" },
-    { path: "./fonts/satoshi/Satoshi-VariableItalic.woff2", weight: "300 900", style: "italic" },
-  ],
-  variable: "--font-satoshi",
+/** Body/UI: Hanken Grotesk (SIL Open Font License). next/font self-hosts it at build time. */
+export const hanken = Hanken_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-hanken",
   display: "swap",
 });
 
@@ -34,4 +26,4 @@ export const tiro = Tiro_Devanagari_Hindi({
   display: "swap",
 });
 
-export const fontVariables = [fraunces.variable, satoshi.variable, caveat.variable, tiro.variable].join(" ");
+export const fontVariables = [fraunces.variable, hanken.variable, caveat.variable, tiro.variable].join(" ");

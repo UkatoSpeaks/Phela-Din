@@ -161,6 +161,15 @@ export type Simulation = z.infer<typeof SimulationSchema>;
 // Careers
 // ---------------------------------------------------------------------------
 
+/**
+ * The object that frames a career's detail page (docs/design.md §1.1).
+ * Optional in careers.json; resolve with getHeroObject() to apply the default.
+ */
+export const HERO_OBJECTS = ["government_file", "prescription_pad", "sketchbook", "phone", "sticker_notebook"] as const;
+export const HeroObjectSchema = z.enum(HERO_OBJECTS);
+export type HeroObject = z.infer<typeof HeroObjectSchema>;
+export const DEFAULT_HERO_OBJECT: HeroObject = "government_file";
+
 export const CareerSchema = z
   .strictObject({
     id: slug,
@@ -170,6 +179,8 @@ export const CareerSchema = z
     status: z.enum(["live", "coming_soon"]),
     /** Launch order from the research: 1 = "Launching first", 2 = second wave. */
     launchWave: z.union([z.literal(1), z.literal(2)]).optional(),
+    /** Detail-page hero object. Defaults to "government_file" when omitted. */
+    heroObject: HeroObjectSchema.optional(),
     simulationId: slug.optional(),
   })
   .refine((c) => c.status !== "live" || c.simulationId, {
@@ -177,6 +188,11 @@ export const CareerSchema = z
     path: ["simulationId"],
   });
 export type Career = z.infer<typeof CareerSchema>;
+
+/** The career's hero object, falling back to the default. */
+export function getHeroObject(career: Pick<Career, "heroObject">): HeroObject {
+  return career.heroObject ?? DEFAULT_HERO_OBJECT;
+}
 
 export const CareersFileSchema = z.array(CareerSchema).superRefine((careers, ctx) => {
   const seen = new Set<string>();

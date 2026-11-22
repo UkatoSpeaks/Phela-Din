@@ -60,7 +60,7 @@ export function AiTaskScene({ scene, simulationId, onDone }: Props) {
 
       {state.status === "reviewed" ? (
         <div className="animate-fade-up rounded-2xl bg-leaf/10 p-4">
-          <p className="text-sm font-semibold text-leaf">Feedback · {state.score}/10</p>
+          <p className="text-sm font-semibold text-leaf-deep">Feedback · {state.score}/10</p>
           <p className="mt-1">{state.feedback}</p>
         </div>
       ) : null}

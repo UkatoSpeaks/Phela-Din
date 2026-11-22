@@ -22,13 +22,20 @@
   --color-chai: #b5652b;    /* chai / kulhad clay: warm accent, links */
   --color-leaf: #3f7a4c;    /* banana leaf / APPROVED green ink: positive */
 
+  /* Text shades of the accents (fills/stamps use the base colours above).
+     Each is the base mixed with ink until it keeps >= 4.5:1 (WCAG AA) on the
+     darkest grain pixel and on paper-2. See docs/design.md §11. */
+  --color-chai-deep: #854d24;
+  --color-leaf-deep: #37643f;
+  --color-margin-deep: #9e392f;
+
   /* Legacy aliases used by pre-redesign screens. Remove as each stage migrates them. */
   --color-cream: var(--color-paper);
   --color-card: var(--color-sheet);
   --color-line: var(--color-paper-2);
   --color-muted: var(--color-ink-2);
   --color-saffron: var(--color-haldi);
-  --color-terracotta: var(--color-chai);
+  --color-terracotta: var(--color-chai-deep);
 
   --radius-paper: 2px;
   --radius-control: 6px;
@@ -44,7 +51,7 @@
 
 @theme inline {
   --font-display: var(--font-fraunces), Georgia, serif;
-  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
   --font-hand: var(--font-caveat), "Comic Sans MS", cursive;
   --font-hindi: var(--font-tiro), "Noto Serif Devanagari", serif;
 }
@@ -58,7 +65,7 @@
   /* Paper with a very subtle fixed grain (SVG turbulence), multiplied into the colour. */
   body {
     background-color: var(--color-paper);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .12 0 0 0 0 .1 0 0 0 0 .08 0 0 0 .55 -.18'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .12 0 0 0 0 .1 0 0 0 0 .08 0 0 0 .3 -.11'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
     background-attachment: fixed;
     color: var(--color-ink);
   }

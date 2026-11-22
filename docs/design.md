@@ -12,7 +12,7 @@ Pehla Din's UI *is* that kit. Every screen is made of objects you'd find on an I
 
 | Object | Where it shows up |
 | --- | --- |
-| **Brown file cover** (khaki, "File No. / Subject") | Career detail pages (dossiers), the Fit Report envelope |
+| **Brown file cover** (khaki, "File No. / Subject") | Default career hero object (see §1.1), the Fit Report envelope |
 | **Ledger / register paper** (blue ruling, red margin line) | Scene text, written tasks, the appraisal letter |
 | **Rubber stamp** (violet stamp-pad ink) | Choices being locked in, day stamps, the Fit Report verdict |
 | **ID card on a lanyard** | Career cards (flip to see the back), the day intro |
@@ -24,11 +24,24 @@ Pehla Din's UI *is* that kit. Every screen is made of objects you'd find on an I
 
 **Rule of thumb:** *printed, not rendered.* Things look like ink on paper: flat colour, hard edges, slight misregistration. They don't look like glossy 3D plastic or frosted glass. (The landing-page 3D diorama is the one exception, and it uses flat-shaded low-poly, not realism.)
 
+### 1.1 Per-career hero objects
+
+The base system (paper, ink, stamps, sticky notes, ID cards, Tiffin, type, colour, motion) is **the same on every screen**. What changes per career is the **hero object**: the one object that frames a career's detail page, the way a real professional's desk is defined by one thing on it. The government file is the default, not the only option.
+
+| `heroObject` | The real thing | Careers | Notes for the build |
+| --- | --- | --- | --- |
+| `government_file` *(default)* | Brown file cover with File No. / Subject (bilingual) and a tab | Civil Services, Chartered Accountant, and any career without a better object | Already built: `PaperCard variant="file"` |
+| `prescription_pad` | A doctor's letterhead pad: name + degrees in the header, "Rx", ruled lines, a stamp-style registration no. | Doctor (MBBS) | Clipboard was the alternative; the prescription pad is more specific to Indian practice |
+| `sketchbook` | A spiral-bound sketchbook page: dotted grid, pencil annotations, rough wireframe boxes | UI/UX Designer | Annotations in Caveat; wireframes as thin ink strokes |
+| `phone` | A phone screen showing the creator's own channel: profile header, view counts, a notification | Content Creator | Real numbers from the profile (312 views, ₹2,400) |
+| `sticker_notebook` | A laptop-style notebook covered in stickers (stack logos, "it works on my machine", a chai sticker) | Software Engineer, AI/ML Engineer | Stickers are flat shapes with a white die-cut edge, tilted |
+
+Rules: a hero object frames the page header and the "Competition reality" callout; the rest of the page (path, pay, pros/cons, sources) stays on the standard paper components so every career page reads the same. Careers without a `heroObject` in `content/careers.json` use `government_file`. Lawyer, Cybersecurity Analyst and Digital Marketer use the default until a better object is chosen.
+
 ## 2. Research notes (why these choices)
 
 - **What reads as "AI slop" in 2025–26:** Inter as the only typeface; purple→blue / violet→indigo gradients; a centred hero with gradient headline text; the hero → 3 icon feature cards → testimonials → CTA template; uniformly rounded cards with soft blurred shadows; emoji or generic line icons as decoration; glassmorphism; sparkle ✨ icons for "AI". These tells come from models and templates defaulting to the statistical centre of their training data. Fix: a specific concept, a distinctive display face, and deliberate layout ([925studios](https://www.925studios.co/blog/ai-slop-design-tells), [dev.to on indigo-500](https://dev.to/alanwest/why-every-ai-built-website-looks-the-same-blame-tailwinds-indigo-500-3h2p), [anti-patterns](https://www.mintlify.com/pbakaus/impeccable/concepts/anti-patterns)).
 - **Indian office material culture:** violet stamp-pad ink is standard government stationery ([SPMCIL stationery list](https://igmhyderabad.spmcil.com/wp-content/uploads/2024/02/Stationery.pdf)); government file covers are brown and carry *File No.* and a bilingual *Subject* ([DDA record room guidance](https://dda.gov.in/sites/default/files/2023-08/record_room_documents_ocr.pdf)). We borrow those exact conventions.
-- **Satoshi licence:** ITF Free Font License: free for commercial use, self-hosting allowed, **no modification/subsetting/format conversion, no redistribution through public repositories**. We self-host the unmodified variable WOFF2 via `next/font/local`. *If this repo becomes public, switch Satoshi to the Fontshare API.*
 
 ## 3. Colour
 
@@ -51,7 +64,9 @@ Every colour is named after a real thing. Flat fills only, no gradients (except 
 | `chai` | `#B5652B` | Chai / kulhad clay | Warm accent, satisfaction glow, links |
 | `leaf` | `#3F7A4C` | Banana leaf / "APPROVED" green ink | Positive effects, "strong fit" |
 
-Semantic aliases: `positive = leaf`, `negative = margin`, `link = chai`, `focus = stamp`.
+Semantic aliases: `positive = leaf`, `negative = margin`, `link = chai-deep`, `focus = stamp`.
+
+**Text shades.** `chai`, `leaf` and `margin` are fill/ink colours and fail AA as small text. Use their `-deep` versions for any text: `chai-deep #854D24`, `leaf-deep #37643F`, `margin-deep #9E392F`. Stamp violet passes as-is.
 
 **Contrast:** body text is always `ink` on `paper`/`sheet`. `ink-2` only for secondary text ≥ 14px. Never put text on `khaki` lighter than `ink`.
 
@@ -60,7 +75,7 @@ Semantic aliases: `positive = leaf`, `negative = margin`, `link = chai`, `focus 
 | Role | Font | Notes |
 | --- | --- | --- |
 | Display / headings | **Fraunces** (Google, variable: `opsz`, `SOFT`, `WONK`) | Use high optical size and `SOFT 50`, `WONK 1` for headlines: warm, slightly odd, old-press feeling. Never all-caps Fraunces. |
-| Body / UI | **Satoshi** (Fontshare, self-hosted) | Regular 400 for body, Bold 700 for buttons/labels. Stamp lettering uses Satoshi Black, uppercase, tracked +0.08em. |
+| Body / UI | **Hanken Grotesk** (Google, OFL, self-hosted by `next/font`) | Regular 400 for body, Bold 700 for buttons/labels. Stamp lettering uses Hanken Grotesk Black (900), uppercase, tracked +0.08em. Chosen over Schibsted Grotesk as the closer match to the round, open grotesk feel we wanted. |
 | Handwriting | **Caveat** (Google) | Sticky notes, margin annotations, signatures. **Max ~25 words per note; never for anything the user must read to proceed.** Min 20px. |
 | Hindi accents | **Tiro Devanagari Hindi** (Google) | Short bilingual labels (पहला दिन, विषय, फ़ाइल सं.). Always paired with English, never the only label. |
 
@@ -104,11 +119,11 @@ Tools: CSS for simple transitions; **GSAP** (`@gsap/react`, `useGSAP`) for Tiffi
 | Component | Description |
 | --- | --- |
 | `PaperCard` | Variants: `sheet` (plain paper), `ledger` (blue ruling + red margin), `file` (khaki folder with tab, "File No." line). |
-| `Stamp` | Violet (or leaf/margin) rubber stamp: rect or round, double border, Satoshi Black caps, roughened ink, optional animated "thump". |
+| `Stamp` | Violet (or leaf/margin) rubber stamp: rect or round, double border, Hanken Grotesk Black caps, roughened ink, optional animated "thump". |
 | `StickyNote` | Haldi note with a strip of tape, Caveat text, slight tilt, optional signature line ("— Priya, 6 yrs in audit"). |
 | `IdCard` | Lanyard slot, org band, photo/initials box, name in Fraunces, role, employee no., barcode. Optional back face; flips. |
 | `Button` | `primary` = ink block with hard offset shadow that presses flat on tap; `secondary` = sheet with 2px ink border; `ghost` = underlined text. |
-| `Tiffin` | Three-tier steel tiffin bound to meters: **stress → steam + rattle, energy → food fill level, satisfaction → warm glow**. Reactions: idle, happy, wince, shocked. |
+| `Tiffin` | Three-tier steel tiffin bound to meters: **energy → food (haldi) fill level, stress → steam wisps (at 40/60/80) + lid rattle (from 60), satisfaction → warm glow**. Moods from meters: idle (breathing), steaming (stress ≥ 75), sleepy (energy ≤ 25). Reactions to a choice's effects, each < 600ms: happy, wince, shocked (net harm ≥ 20). Charming and a bit cheeky (idle smirk), never babyish; steel + ink + haldi only; readable at 64px. **Tap shows a "Tiffin slip" with the actual numbers**, and the button's label always carries them, so meaning is never visual-only. Rules live in `src/lib/tiffin.ts`. GSAP loads only where Tiffin is used (player, /design). |
 
 ## 9. Voice
 
@@ -117,7 +132,7 @@ Indian English, warm and specific, like a kind senior colleague. Real numbers, n
 ## 10. "Not AI slop" rules
 
 1. **No purple/indigo/violet gradients. No gradients on UI at all.** Violet exists only as stamp ink.
-2. **No Inter, no system-font-only UI.** Fraunces + Satoshi + Caveat + Tiro, used by role.
+2. **No Inter, no system-font-only UI.** Fraunces + Hanken Grotesk + Caveat + Tiro, used by role.
 3. **No emoji as icons or decoration.** Icons are small custom SVG marks drawn like stamps or ink, or a word.
 4. **No centred gradient-text hero, no 3 icon feature cards, no testimonial carousel, no bento grid.**
 5. **No glassmorphism, no blurry glow shadows, no `rounded-3xl` everything.** Hard shadows, small radii.
@@ -129,4 +144,25 @@ Indian English, warm and specific, like a kind senior colleague. Real numbers, n
 
 ## 11. Accessibility
 
-AA contrast on all text. Focus ring: 3px `stamp` outline, 2px offset. Hindi and handwriting are never the only carrier of meaning. Tiffin has a text equivalent (screen-reader meter values + visible numbers on tap). Everything works at 360px and at 200% zoom.
+AA contrast on all text. Measured Nov 2026 by rendering the grain and sampling every pixel (darkest pixel = worst case):
+
+| Background | `ink` | `ink-2` | `chai-deep` | `leaf-deep` | `margin-deep` |
+| --- | --- | --- | --- | --- | --- |
+| paper (flat) | 14.7 | 6.3 | 5.5 | 5.5 | 5.5 |
+| paper + grain, darkest pixel | 11.7 | 5.0 | 4.6 | 4.7 | 4.6 |
+| paper-2 | 13.1 | 5.6 | 5.2 | 5.2 | 5.2 |
+| sheet | 16.2 | 6.9 | 6.4 | 6.4 | 6.4 |
+
+Grain is limited so the darkest pixel keeps `ink-2` ≥ 4.5:1 (it was 3.9 in v1 and was lightened). Semi-transparent ink passes on the solid surfaces it's used on: `ink/75` on khaki 4.6, `ink/70` on haldi/rose/sky ≥ 4.9. Ledger rule lines are 1px decorations under the text, not backgrounds. **Stamps** are decorative ink (patchy by design): every stamp has an `aria-label`, and any meaning a stamp carries (a verdict, a day) must also appear as plain text nearby. Use `margin`/`leaf` stamps at `md` size or larger. Focus ring: 3px `stamp` outline, 2px offset. Hindi and handwriting are never the only carrier of meaning. Tiffin has a text equivalent (screen-reader meter values + visible numbers on tap). Everything works at 360px and at 200% zoom.
+
+## 12. Home page
+
+The home page explains Pehla Din by letting people *do* it, not by listing features.
+
+1. **Hero:** headline + one paragraph on what happens (a realistic week, your calls, an honest Fit Report), two CTAs, "no sign-up". Beside it, *"Who do you want to be on your pehla din?"*: five original cast characters (`components/home/Avatar.tsx`), switched with passport-photo chips. Each speaks a real scene idea and shows the competition reality from its career profile (`components/home/cast.ts` reads them from content; nothing is typed by hand). Auto-plays until touched; never under reduced motion.
+2. **How it works as one working day** (9:30 AM → 3:00 PM → 6:45 PM). The 3:00 PM step is a real playable scene from the sample simulation, with Tiffin and a stamp. GSAP ScrollTrigger draws the rail.
+3. **Every job has a different desk:** low-poly R3F desk with per-career props and Tiffin, ink outlines via Drei `Edges`. Three.js loads only on the home page, only when the section is near, never under reduced motion or without WebGL; static renders in `public/home/desk-*.webp` (regenerate when the scene changes) show meanwhile or instead.
+4. **Reality clippings:** competition numbers from the profiles as newspaper cuttings, linking to each career file.
+5. **For parents** sticky note + final CTA on a file cover.
+
+Animation: one library (GSAP) across the app instead of adding Framer Motion, to keep JavaScript small on budget phones. GSAP loads on the home page, the player and /design.

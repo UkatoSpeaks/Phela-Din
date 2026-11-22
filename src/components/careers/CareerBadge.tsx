@@ -1,8 +1,8 @@
 import type { Career } from "@/types/simulation";
 
 const styles = {
-  demo: "bg-leaf/15 text-leaf",
-  live: "bg-leaf/15 text-leaf",
+  demo: "bg-leaf/15 text-leaf-deep",
+  live: "bg-leaf/15 text-leaf-deep",
   launch: "bg-saffron/25 text-terracotta",
   soon: "bg-line text-muted",
 } as const;

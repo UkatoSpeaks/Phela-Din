@@ -19,14 +19,15 @@ import {
   submitAiTask,
 } from "@/lib/engine";
 import { buildFitReport } from "@/lib/fit-report";
+import { reactionForEffects } from "@/lib/tiffin";
 import { clearRun, loadRun, saveRun } from "@/lib/storage";
 import { METER_KEYS, type AiAnswer, type MeterEffects, type Run, type Simulation } from "@/types/simulation";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { AiTaskScene } from "./AiTaskScene";
 import { ChoiceButton } from "./ChoiceButton";
 import { DayIntro } from "./DayIntro";
-import { MeterBar } from "./MeterBar";
 import { SceneCard } from "./SceneCard";
+import { Tiffin, type TiffinReactionCue } from "./Tiffin";
 
 const METER_LABELS = { energy: "Energy", stress: "Stress", satisfaction: "Satisfaction" } as const;
 
@@ -41,7 +42,7 @@ function EffectChips({ effects }: { effects: MeterEffects }) {
         return (
           <span
             key={key}
-            className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${good ? "bg-leaf/15 text-leaf" : "bg-terracotta/15 text-terracotta"}`}
+            className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${good ? "bg-leaf/15 text-leaf-deep" : "bg-terracotta/15 text-terracotta"}`}
           >
             {METER_LABELS[key]} {delta > 0 ? "+" : "−"}
             {Math.abs(delta)}
@@ -61,6 +62,7 @@ export function SimPlayer({ sim }: { sim: Simulation }) {
   const router = useRouter();
   const [run, setRun] = useState<Run | null>(null);
   const started = useRef(false);
+  const [cue, setCue] = useState<TiffinReactionCue | null>(null);
 
   // Load (or start) the run on the client only, since localStorage doesn't exist during SSR.
   useEffect(() => {
@@ -122,15 +124,23 @@ export function SimPlayer({ sim }: { sim: Simulation }) {
 
   const dayNumber = day.day;
 
+  /** Tiffin reacts to what just changed (happy / wince / shocked), if anything. */
+  function react(effects: MeterEffects | undefined) {
+    const type = reactionForEffects(effects);
+    if (type) setCue((c) => ({ type, key: (c?.key ?? 0) + 1 }));
+  }
+
   function onChoose(choiceIndex: number) {
     if (!run || !scene) return;
     update(applyChoice(sim, run, scene.id, choiceIndex));
+    if (scene.type === "choice") react(scene.choices[choiceIndex]?.effects);
     track("scene_completed", { simulationId: sim.id, sceneId: scene.id, sceneType: "choice", day: dayNumber, choiceIndex });
   }
 
   function onEventContinue() {
     if (!run || !scene) return;
     update(completeEvent(sim, run, scene.id));
+    if (scene.type === "event") react(scene.effects);
     track("scene_completed", { simulationId: sim.id, sceneId: scene.id, sceneType: "event", day: dayNumber });
   }
 
@@ -194,20 +204,19 @@ export function SimPlayer({ sim }: { sim: Simulation }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <header className="flex items-center justify-between gap-2">
-        <div>
-          <h1 className="text-lg font-bold leading-tight">{sim.title}</h1>
-          <p className="text-xs text-muted">
-            Day {day.day} of {sim.days.length} · {progress.completed}/{progress.total} moments
+      {/* Sticky desk strip: Tiffin (tap for values), where you are, restart. */}
+      <header className="sticky top-0 z-10 -mx-4 flex items-center gap-3 border-b-2 border-ink bg-paper px-4 py-2">
+        <Tiffin meters={run.meters} reaction={cue} size={64} />
+        <div className="min-w-0 flex-1">
+          <h1 className="truncate text-lg font-semibold leading-tight">{sim.title}</h1>
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-ink-2">
+            Day {day.day} of {sim.days.length} · <span className="tabular-nums">{progress.completed}/{progress.total}</span> moments
           </p>
         </div>
-        <button type="button" onClick={restart} className="min-h-11 px-2 text-sm text-muted underline-offset-4 hover:underline">
+        <button type="button" onClick={restart} className="min-h-11 shrink-0 px-2 text-sm font-bold underline decoration-chai decoration-2 underline-offset-4">
           Restart
         </button>
       </header>
-      <div className="sticky top-2 z-10">
-        <MeterBar meters={run.meters} />
-      </div>
       {body}
     </div>
   );

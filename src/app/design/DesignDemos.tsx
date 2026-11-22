@@ -51,7 +51,7 @@ export function IdCardFlip() {
                 <dd>Average ~₹13 LPA</dd>
               </div>
             </dl>
-            <p className="mt-auto font-hand text-xl text-chai">Tap to flip back</p>
+            <p className="mt-auto font-hand text-xl text-chai-deep">Tap to flip back</p>
           </>
         }
       />
