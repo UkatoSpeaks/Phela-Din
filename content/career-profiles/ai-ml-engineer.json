@@ -1,0 +1,75 @@
+{
+  "id": "ai-ml-engineer",
+  "title": "AI/ML Engineer / Data Scientist",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "CS/maths/statistics degree",
+      "Python, ML and SQL",
+      "Projects, internships, Kaggle",
+      "ML Engineer / Data Scientist"
+    ],
+    "note": "Research roles often need a master's or PhD."
+  },
+  "skills": [
+    "Python",
+    "Statistics",
+    "ML models",
+    "LLMs and RAG",
+    "Data cleaning",
+    "Experiment design",
+    "MLOps",
+    "Explaining results to non-technical people"
+  ],
+  "pay": {
+    "columns": [
+      "Stage",
+      "Range"
+    ],
+    "rows": [
+      {
+        "label": "Fresher (0–1 yr)",
+        "value": "~₹6–12 LPA"
+      },
+      {
+        "label": "1–3 yrs",
+        "value": "~₹12–24 LPA"
+      },
+      {
+        "label": "3–6 yrs",
+        "value": "~₹24–42 LPA (more at top product companies)"
+      }
+    ]
+  },
+  "pros": [
+    "Fastest-growing hiring segment even while overall IT hiring is flat",
+    "Intellectually exciting; high pay ceiling",
+    "Work spans every industry (finance, health, retail)"
+  ],
+  "cons": [
+    "Most of the job is cleaning messy data, not building models",
+    "Fierce competition at entry level; strong offers often come only through internships",
+    "The field changes every few months, so burnout risk is real",
+    "Models fail in production in ways that are hard to explain to managers"
+  ],
+  "sceneIdeas": [
+    "The data has 30% missing values and the demo is tomorrow",
+    "The model scores 95% in the notebook and 60% in production",
+    "A manager asks \"can't AI just do this?\"",
+    "Deciding whether to ship a model you don't fully trust"
+  ],
+  "sources": [
+    {
+      "label": "AI/ML postings +25% (Deccan Chronicle, World Bank data)",
+      "url": "https://www.deccanchronicle.com/amp/southern-states/telangana/ai-reshapes-entry-level-it-hiring-in-hyderabad-1990855"
+    },
+    {
+      "label": "ML engineer benchmarks (Scaler)",
+      "url": "https://www.scaler.com/topics/salary-of-machine-learning-engineer-in-india/"
+    },
+    {
+      "label": "AI/ML engineer (Instahyre)",
+      "url": "https://resources.instahyre.com/blog/ai-engineer-salary-in-india/"
+    }
+  ]
+}

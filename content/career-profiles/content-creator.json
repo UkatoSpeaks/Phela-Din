@@ -1,0 +1,94 @@
+{
+  "id": "content-creator",
+  "title": "Content Creator",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "Pick a niche",
+      "Post consistently for months or years",
+      "Grow an audience",
+      "Earn through brand deals, ads, affiliate links, courses or your own products"
+    ],
+    "note": "No fixed path."
+  },
+  "skills": [
+    "Scripting",
+    "Shooting and editing",
+    "Storytelling",
+    "Analytics",
+    "Personal branding",
+    "Pitching to brands",
+    "Negotiation",
+    "Running a one-person business"
+  ],
+  "pay": {
+    "title": "very uneven",
+    "columns": [
+      "Level",
+      "Reality"
+    ],
+    "rows": [
+      {
+        "label": "Most creators",
+        "value": "Little or nothing; only ~8–10% of Indian creators earn a meaningful income"
+      },
+      {
+        "label": "Mid-sized creators",
+        "value": "Irregular income from brand deals (e.g., one Kolkata creator shared earning ₹3.06 lakh from 5 brand deals in a month)"
+      },
+      {
+        "label": "Macro creators",
+        "value": "~₹20 lakh to ₹1.5 crore a year; mega creators more"
+      }
+    ]
+  },
+  "pros": [
+    "Almost zero cost to start: a phone and internet",
+    "Creative freedom and being your own boss",
+    "Creator jobs are growing too (Indeed: creator-related postings up ~919% from 2020 to early 2026), with roles like editors, managers and strategists"
+  ],
+  "cons": [
+    "Power-law income: a tiny fraction earn most of the money",
+    "Unstable month to month; one algorithm change can wipe out reach",
+    "Mental-health strain: comments, comparison, pressure to post constantly",
+    "No salary, PF or paid leave; you're a business, with taxes and contracts"
+  ],
+  "competitionReality": {
+    "basis": "Content creation",
+    "signal": "Indian creators grew from ~0.96M (2020) to ~4.12M (2025)",
+    "reality": "Only ~8–10% earn a meaningful income"
+  },
+  "sceneIdeas": [
+    "Your best video gets 312 views",
+    "A brand offers ₹15,000 for a product you don't like",
+    "A reel goes viral and you can't repeat it",
+    "Family asks when you'll get a \"real job\"",
+    "Month 8 earnings: ₹2,400"
+  ],
+  "sources": [
+    {
+      "label": "Creator economy size (ISB SRITNE)",
+      "url": "https://prodcd.isb.edu/media/ykmjlwaj/india_creator_economy_interactive_report.html"
+    },
+    {
+      "label": "Creator monetisation 8–10% (BCG via BOOM)",
+      "url": "https://www.boomlive.in/web-stories/news/only-810-of-indian-creators-earn-steady-income-bcg-report-2432"
+    },
+    {
+      "label": "Creator job postings +919% (Indeed via Tribune)",
+      "url": "https://www.tribuneindia.com/news/business/indias-creator-economy-grew-by-919-between-2020-and-2026-survey/"
+    },
+    {
+      "label": "Creator aspiration among youth (Business Today)",
+      "url": "https://www.businesstoday.in/magazine/deep-dive/story/from-likes-to-riches-tracking-the-rise-of-contentpreneurs-513490-2026-01-29"
+    },
+    {
+      "label": "Creator earnings (Business Today)",
+      "url": "https://www.businesstoday.in/amp/magazine/deep-dive/story/from-likes-to-riches-tracking-the-rise-of-contentpreneurs-513490-2026-01-29"
+    },
+    {
+      "label": "₹3.06 lakh from 5 brand deals, Kolkata creator (Business Today)",
+      "url": "https://www.businesstoday.in/india/story/rs3-06-lakh-from-5-brand-deals-kolkata-content-creator-reveals-her-earnings-567514-2026-11-15"
+    }
+  ]
+}

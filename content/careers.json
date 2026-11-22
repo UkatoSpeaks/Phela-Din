@@ -1,0 +1,90 @@
+[
+  {
+    "id": "sample-career",
+    "name": "Sample Career",
+    "category": "Placeholder",
+    "shortDescription": "A short demo simulation to test the app.",
+    "status": "live",
+    "simulationId": "sample-career"
+  },
+  {
+    "id": "software-engineer",
+    "name": "Software Engineer",
+    "category": "Technology",
+    "shortDescription": "Build and fix software at an Indian startup, with vague tickets, code reviews and Friday-evening bugs included.",
+    "status": "coming_soon",
+    "launchWave": 1
+  },
+  {
+    "id": "doctor-mbbs",
+    "name": "Doctor (MBBS)",
+    "category": "Healthcare",
+    "shortDescription": "Live a week as a junior resident: long shifts, tough calls and families who need answers.",
+    "status": "coming_soon",
+    "launchWave": 1
+  },
+  {
+    "id": "chartered-accountant",
+    "name": "Chartered Accountant",
+    "category": "Finance",
+    "shortDescription": "From articleship to filing deadlines: audits, taxes and clients who hand you a shoebox of receipts.",
+    "status": "coming_soon",
+    "launchWave": 1
+  },
+  {
+    "id": "civil-services",
+    "name": "Civil Services (IAS)",
+    "category": "Government",
+    "shortDescription": "Try the aspirant years and a first posting as an SDM, where floods, files and phone calls all arrive at once.",
+    "status": "coming_soon",
+    "launchWave": 1
+  },
+  {
+    "id": "content-creator",
+    "name": "Content Creator",
+    "category": "Creative",
+    "shortDescription": "Script, shoot, post and hope: the real numbers behind building an audience.",
+    "status": "coming_soon",
+    "launchWave": 1
+  },
+  {
+    "id": "ai-ml-engineer",
+    "name": "AI/ML Engineer",
+    "category": "Technology",
+    "shortDescription": "Messy data, models that break in production and managers who think AI can do anything.",
+    "status": "coming_soon",
+    "launchWave": 2
+  },
+  {
+    "id": "lawyer",
+    "name": "Lawyer",
+    "category": "Law",
+    "shortDescription": "Midnight drafting, adjourned hearings and a senior who takes credit for your argument.",
+    "status": "coming_soon",
+    "launchWave": 2
+  },
+  {
+    "id": "ui-ux-designer",
+    "name": "UI/UX Designer",
+    "category": "Creative",
+    "shortDescription": "Design screens people actually use, then defend them from 'make the logo bigger'.",
+    "status": "coming_soon",
+    "launchWave": 2
+  },
+  {
+    "id": "cybersecurity-analyst",
+    "name": "Cybersecurity Analyst",
+    "category": "Technology",
+    "shortDescription": "2:47am, 400 alerts and one of them is real.",
+    "status": "coming_soon",
+    "launchWave": 2
+  },
+  {
+    "id": "digital-marketer",
+    "name": "Digital Marketer",
+    "category": "Business",
+    "shortDescription": "Run ad campaigns where every rupee is tracked and algorithms change overnight.",
+    "status": "coming_soon",
+    "launchWave": 2
+  }
+]

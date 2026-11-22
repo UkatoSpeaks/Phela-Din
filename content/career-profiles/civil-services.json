@@ -1,0 +1,100 @@
+{
+  "id": "civil-services",
+  "title": "Civil Services (IAS/IPS via UPSC)",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "Graduation in any subject",
+      "UPSC Prelims",
+      "Mains",
+      "Interview"
+    ],
+    "duration": "Most serious aspirants prepare for 2–5 years",
+    "note": "Up to 6 attempts for general category (more for reserved categories)."
+  },
+  "skills": [
+    "Polity",
+    "History",
+    "Geography",
+    "Economy",
+    "Ethics",
+    "Essay writing",
+    "Current affairs",
+    "After selection: administration",
+    "Crisis management",
+    "Leading large teams",
+    "Handling politics and public pressure"
+  ],
+  "pay": {
+    "title": "7th Pay Commission",
+    "columns": [
+      "Stage",
+      "Pay"
+    ],
+    "rows": [
+      {
+        "label": "Entry (Level 10)",
+        "value": "₹56,100/month basic; with ~60% DA that's ~₹89,760 before HRA and other allowances"
+      },
+      {
+        "label": "Senior",
+        "value": "Rises through pay levels with promotions"
+      },
+      {
+        "label": "Cabinet Secretary (top)",
+        "value": "₹2,50,000/month basic"
+      }
+    ],
+    "notes": [
+      "The 8th Pay Commission report is expected around 2027.",
+      "Plus housing, vehicle, staff and job security, which is a big part of the real value."
+    ]
+  },
+  "pros": [
+    "Huge impact on people's lives and real power to fix problems",
+    "Unmatched social respect and job security",
+    "Variety: postings across districts, ministries and sectors"
+  ],
+  "cons": [
+    "About 1 seat for every ~800 applicants; most aspirants never get selected",
+    "Years of preparation with no income and big social pressure (\"Abhi tak nahi hua?\")",
+    "Transfers, political pressure, long hours and little control over where you live",
+    "Pay is modest compared with private-sector peers in the early years"
+  ],
+  "competitionReality": {
+    "signal": "8,19,372 applied for UPSC CSE 2026; ~5.49 lakh appeared",
+    "reality": "1,016 vacancies, so about 1 post for every ~800 applicants"
+  },
+  "sceneIdeas": [
+    "Attempt 3 results day",
+    "A relative asks \"what's your backup plan?\" at a wedding",
+    "First posting as SDM, with a flood alert and a local politician on the phone at the same time",
+    "A coaching fee vs. family savings conversation"
+  ],
+  "sources": [
+    {
+      "label": "UPSC CSE 2026 applicants (PW)",
+      "url": "https://www.pw.live/news/upsc-prelims-2026-new-exam-centres-bhubaneswar-kanpur-meerut-total-applicants"
+    },
+    {
+      "label": "UPSC 2026 appeared (News on AIR)",
+      "url": "https://newsonair.gov.in/nearly-5-49-lakh-candidates-appear-for-csp-ifos-exam-conducted-by-upsc/"
+    },
+    {
+      "label": "UPSC 2026 vacancies and Mains shortlist (PW)",
+      "url": "https://www.pw.live/upsc/exams/upsc-prelims-2026-results-13343-selected-for-mains"
+    },
+    {
+      "label": "IAS pay (Understand UPSC)",
+      "url": "https://www.understandupsc.com/ias-salary-in-india-2026/"
+    },
+    {
+      "label": "IAS pay (Legacy IAS)",
+      "url": "https://www.legacyias.com/ias-officer-salary-2026/"
+    },
+    {
+      "label": "IAS pay (Vajiram)",
+      "url": "https://vajiramandravi.com/upsc-exam/ias-salary/"
+    }
+  ]
+}

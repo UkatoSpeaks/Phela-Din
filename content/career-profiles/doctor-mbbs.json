@@ -1,0 +1,93 @@
+{
+  "id": "doctor-mbbs",
+  "title": "Doctor (MBBS → Specialist)",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "NEET UG",
+      "MBBS (5.5 years including internship)",
+      "Often NEET PG",
+      "MD/MS (3 years)",
+      "Optional super-specialty (DM/MCh, 3 years)"
+    ],
+    "duration": "10+ years to become a specialist"
+  },
+  "skills": [
+    "Anatomy",
+    "Physiology",
+    "Pharmacology",
+    "Clinical diagnosis",
+    "Procedures",
+    "Emergency care",
+    "Talking to scared families",
+    "Decisions under pressure"
+  ],
+  "pay": {
+    "columns": [
+      "Stage",
+      "Range"
+    ],
+    "rows": [
+      {
+        "label": "MBBS intern",
+        "value": "~₹24,000–30,000/month stipend in many government colleges (varies widely; some private colleges pay far less)"
+      },
+      {
+        "label": "Junior Resident / Medical Officer",
+        "value": "~₹50,000–80,000/month in government roles (e.g., MP JR stipend ₹66,148/month from 2026)"
+      },
+      {
+        "label": "MD/MS specialist",
+        "value": "Grows strongly; super-specialists in private practice can earn crores"
+      }
+    ]
+  },
+  "pros": [
+    "Deep meaning and social respect; you help people directly",
+    "Very high job security; the doctor shortage keeps demand strong",
+    "High earnings later, especially after specialisation"
+  ],
+  "cons": [
+    "Extremely competitive entry; many students spend 1–3 drop years",
+    "10+ years before stable, high income, while friends in other fields are already earning",
+    "24–36 hour shifts as a resident, burnout, and violence against doctors in some hospitals",
+    "Private MBBS fees can run into crores"
+  ],
+  "competitionReality": {
+    "signal": "22,79,743 registered for NEET UG 2026 (13.3 lakh female, 9.5 lakh male); ~20 lakh appeared",
+    "reality": "~1.37–1.41 lakh MBBS seats for 2026-27, so roughly 1 seat for every 16 registrants"
+  },
+  "sceneIdeas": [
+    "Hour 26 of a 36-hour shift",
+    "An angry relative in the emergency ward",
+    "Choosing which of three patients to see first",
+    "Your school friend posts their first car while you earn a stipend",
+    "NEET PG rank day"
+  ],
+  "sources": [
+    {
+      "label": "NEET UG 2026 registrations (NTA via Shiksha)",
+      "url": "https://www.shiksha.com/news/medicine-health-sciences-how-many-students-registered-for-nta-neet-2026-male-female-applicants-number-announced-blogId-228651"
+    },
+    {
+      "label": "NEET UG 2026 appeared vs registered (Careers360)",
+      "url": "https://news.careers360.com/neet-ug-2026-result-highlights-absentees-surge-qualifiers-fall-cut-offs-rise-toppers-list/amp"
+    },
+    {
+      "label": "MBBS seats 2026-27 (Business Standard)",
+      "url": "https://www.business-standard.com/india-news/nmc-mbbs-seats-india-doctor-shortage-medical-education-126071600861_1.html"
+    },
+    {
+      "label": "MBBS seat matrix update, 1,40,664 seats (Medical Dialogues)",
+      "url": "https://medicaldialogues.in/amp/news/education/140664-mbbs-seats-across-839-medical-colleges-for-2026-27-127028-renewed-13636-increased-nmc-updates-seat-matrix-179737"
+    },
+    {
+      "label": "MBBS intern and JR pay (Possible11)",
+      "url": "https://possible11.com/article/state-wise-junior-doctor-salaries-delhi-and-assam-lead-india-medical-pay-scale/"
+    },
+    {
+      "label": "MBBS intern and JR pay (Medical Dialogues)",
+      "url": "https://medicaldialogues.in/state-news/madhya-pradesh/madhya-pradesh-approves-stipend-hike-pg-ss-medicos-to-get-upto-rs-86118-senior-residents-rs-94853-per-month-180947"
+    }
+  ]
+}

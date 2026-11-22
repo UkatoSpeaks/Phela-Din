@@ -1,0 +1,69 @@
+{
+  "id": "ui-ux-designer",
+  "title": "UI/UX Designer",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "Design degree (NID, NIFT, B.Des) or self-taught + portfolio",
+      "Internship",
+      "Junior product designer"
+    ],
+    "note": "A portfolio matters more than a degree."
+  },
+  "skills": [
+    "User research",
+    "Wireframing",
+    "Figma",
+    "Visual design",
+    "Prototyping",
+    "Usability testing",
+    "Presenting and defending design decisions"
+  ],
+  "pay": {
+    "columns": [
+      "Stage",
+      "Range"
+    ],
+    "rows": [
+      {
+        "label": "Fresher",
+        "value": "~₹3–6 LPA"
+      },
+      {
+        "label": "Early career UX designer",
+        "value": "Median ~₹5.7 LPA (Payscale)"
+      },
+      {
+        "label": "Senior / product designer at strong companies",
+        "value": "Well into double-digit LPA"
+      }
+    ]
+  },
+  "pros": [
+    "Creative work with a direct impact on how people use products",
+    "Can enter without an engineering degree; remote-friendly",
+    "Grows into product design, research or design leadership"
+  ],
+  "cons": [
+    "Crowded entry market after the bootcamp boom; a portfolio is everything",
+    "Design by committee: stakeholders override your decisions",
+    "Lower starting pay than engineering",
+    "AI tools are speeding up routine UI work, so research and thinking skills matter more"
+  ],
+  "sceneIdeas": [
+    "The founder says \"make the logo bigger\" on your 5th iteration",
+    "User testing proves your favourite design wrong",
+    "An engineer says your design is \"impossible\"",
+    "Presenting to the CEO with 10 minutes' notice"
+  ],
+  "sources": [
+    {
+      "label": "UI/UX designer salary (GUVI)",
+      "url": "https://www.guvi.in/blog/ui-ux-designer-salary-in-india/"
+    },
+    {
+      "label": "Early career UX designer (Payscale)",
+      "url": "https://www.payscale.com/research/IN/Job=User_Experience_Designer/Salary/b2c7b013/Early-Career-User-Experience-UX-Design"
+    }
+  ]
+}

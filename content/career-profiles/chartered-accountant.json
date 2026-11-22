@@ -1,0 +1,89 @@
+{
+  "id": "chartered-accountant",
+  "title": "Chartered Accountant",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "CA Foundation (after Class 12, or provisional registration after Class 10)",
+      "CA Intermediate",
+      "2–3 years articleship at a CA firm",
+      "CA Final"
+    ],
+    "duration": "Usually 4.5–6 years in total",
+    "note": "Many take longer because of failed attempts."
+  },
+  "skills": [
+    "Accounting",
+    "Auditing",
+    "Direct and indirect tax (GST)",
+    "Corporate law",
+    "Financial reporting",
+    "Excel and Tally",
+    "Client handling",
+    "Deadline discipline"
+  ],
+  "pay": {
+    "columns": [
+      "Stage",
+      "Range"
+    ],
+    "rows": [
+      {
+        "label": "Articleship",
+        "value": "Low stipend (fixed by ICAI/firm; much lower than a salary)"
+      },
+      {
+        "label": "Newly qualified CA (ICAI campus, Apr–May 2026)",
+        "value": "Average ~₹13 LPA; highest domestic offer ₹27.5 LPA; international offers higher"
+      },
+      {
+        "label": "Experienced (consulting, banking, CFO track)",
+        "value": "₹20 LPA to well over ₹50 LPA"
+      }
+    ]
+  },
+  "pros": [
+    "Strong, respected qualification; at the 2026 ICAI campus drive there were ~8,900 vacancies for ~5,800 candidates",
+    "Good starting pay for the cost of the course (far cheaper than an MBA or private engineering)",
+    "Paths into Big 4, banking, corporate finance, or your own practice"
+  ],
+  "cons": [
+    "Brutal exams: the Foundation pass rate is about 1 in 5; repeated attempts are common and demoralising",
+    "Articleship is long, low-paid and often heavy on grunt work",
+    "Audit and tax-season crunches (long nights before filing deadlines)",
+    "AI and automation are changing routine bookkeeping and audit work"
+  ],
+  "competitionReality": {
+    "signal": "~10 lakh students registered with ICAI (2025 report)",
+    "reality": "CA Foundation pass rate ~19–21% per attempt"
+  },
+  "sceneIdeas": [
+    "The night before the GST filing deadline",
+    "A client hands you a shoebox of receipts",
+    "Failing one group of CA Inter by 4 marks",
+    "Your articleship boss asks you to stay late again",
+    "Spotting something odd in a client's books"
+  ],
+  "sources": [
+    {
+      "label": "ICAI student numbers (Careers360)",
+      "url": "https://finance.careers360.com/articles/icai-student-and-member-report-2025"
+    },
+    {
+      "label": "CA Foundation pass rates 2026 (PW)",
+      "url": "https://www.pw.live/ca/exams/ca-foundation-result-statistics-2026"
+    },
+    {
+      "label": "CA Foundation pass rates 2026 (Careers360)",
+      "url": "https://news.careers360.com/ca-foundation-september-result-2026-out-download-scorecard-direct-link-caresults-icai-org-18-93-pass-percentage-toppers/amp"
+    },
+    {
+      "label": "ICAI 64th campus placement (ICAI Placement Directorate)",
+      "url": "https://ipd.icai.org/events/month/"
+    },
+    {
+      "label": "ICAI vacancies vs candidates (TaxGuru)",
+      "url": "https://taxguru.in/chartered-accountant/ca-profession-low-paying-icai-rejecting-misreported-salary-data.html"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "cybersecurity-analyst",
+  "title": "Cybersecurity Analyst",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "CS/IT degree or networking background",
+      "Certifications (CompTIA Security+, CEH, etc.)",
+      "SOC Analyst L1",
+      "Specialisations (pentesting, cloud security, incident response)"
+    ]
+  },
+  "skills": [
+    "Networking",
+    "Linux",
+    "Threat detection",
+    "SIEM tools",
+    "Incident response",
+    "Ethical hacking",
+    "Security policies and compliance"
+  ],
+  "pay": {
+    "columns": [
+      "Stage",
+      "Range"
+    ],
+    "rows": [
+      {
+        "label": "SOC Analyst L1 (0–2 yrs)",
+        "value": "~₹4–8 LPA"
+      },
+      {
+        "label": "Security Analyst (1–3 yrs)",
+        "value": "~₹5–10 LPA"
+      },
+      {
+        "label": "Specialists / senior",
+        "value": "₹15 LPA+, with top roles much higher"
+      }
+    ]
+  },
+  "pros": [
+    "Industry estimates point to a big shortage of skilled professionals",
+    "Every industry needs it, especially banking (RBI flags AI-enabled cyberattacks as a top risk)",
+    "Exciting, puzzle-like work for curious people"
+  ],
+  "cons": [
+    "Entry-level SOC work can mean night shifts and repetitive alert monitoring",
+    "High-stress incidents; when something goes wrong, it's on you",
+    "Never-ending learning and certifications"
+  ],
+  "sceneIdeas": [
+    "2:47am, 400 alerts and one of them is real",
+    "A phishing email fools the CFO",
+    "Deciding whether to shut down a server during business hours",
+    "Explaining a breach to non-technical management"
+  ],
+  "sources": [
+    {
+      "label": "Cybersecurity jobs (EICTA IIT Kanpur)",
+      "url": "https://www.eicta.iitk.ac.in/knowledge-hub/cyber-security/cybersecurity-jobs"
+    },
+    {
+      "label": "Cybersecurity scope in India 2026 (SNU)",
+      "url": "https://snu.edu.in/blogs/cybersecurity-scope-in-india-2026-emerging-roles-salaries-future-trends/"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "digital-marketer",
+  "title": "Digital Marketer",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "Any degree (BBA/BCom/BA/mass comm) + a course or self-learning",
+      "Internship",
+      "Executive role (SEO, social media, performance marketing, content)"
+    ]
+  },
+  "skills": [
+    "SEO",
+    "Google and Meta ads",
+    "Analytics",
+    "Copywriting",
+    "Social media strategy",
+    "Campaign budgeting",
+    "Reading data to decide what to change"
+  ],
+  "pay": {
+    "columns": [
+      "Stage",
+      "Range"
+    ],
+    "rows": [
+      {
+        "label": "Fresher",
+        "value": "~₹2.5–6 LPA"
+      },
+      {
+        "label": "SEO executive",
+        "value": "~₹3–8 LPA"
+      },
+      {
+        "label": "Performance marketing (managing large ad budgets)",
+        "value": "~₹12–25 LPA"
+      }
+    ]
+  },
+  "pros": [
+    "Low barrier to entry; any degree works",
+    "Skills transfer to freelancing, your own brand, or startups",
+    "Results are measurable, so good performers stand out"
+  ],
+  "cons": [
+    "Low starting pay in many companies",
+    "Always on: algorithm changes, weekend campaigns, client pressure",
+    "AI is automating routine content and ad tasks; specialists survive, generalists struggle"
+  ],
+  "sceneIdeas": [
+    "The campaign burned ₹50,000 with 3 sales",
+    "Instagram changed its algorithm overnight",
+    "A client wants \"viral\" content by tomorrow",
+    "Choosing between two ad creatives with real data"
+  ],
+  "sources": [
+    {
+      "label": "Digital marketing jobs, roles and salaries (EICTA IIT Kanpur)",
+      "url": "https://www.eicta.iitk.ac.in/knowledge-hub/digital-marketing/digital-marketing-jobs-roles-salaries-guide"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "lawyer",
+  "title": "Lawyer",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "CLAT/AILET/state exams",
+      "5-year integrated LLB (or 3-year LLB after graduation)",
+      "Bar Council enrolment",
+      "Litigation, a corporate law firm, in-house legal, or judiciary exams"
+    ]
+  },
+  "skills": [
+    "Legal reasoning",
+    "Drafting",
+    "Research",
+    "Arguing",
+    "Negotiation",
+    "Reading long documents fast"
+  ],
+  "pay": {
+    "columns": [
+      "Path",
+      "Reality"
+    ],
+    "rows": [
+      {
+        "label": "Top NLU → corporate law firm",
+        "value": "Strong starts (e.g., NLSIU median UG placement ~₹16 LPA)"
+      },
+      {
+        "label": "Litigation (court practice)",
+        "value": "Often low pay in the first years while you build a practice under a senior"
+      },
+      {
+        "label": "Judiciary",
+        "value": "Government pay scale + security after clearing judicial services exams"
+      }
+    ]
+  },
+  "pros": [
+    "Many paths: courts, firms, companies, policy, judiciary",
+    "Intellectually demanding; strong long-term earning potential",
+    "CLAT interest is growing fast (registrations up ~70% since 2023)"
+  ],
+  "cons": [
+    "Huge gap between top-NLU outcomes and everyone else",
+    "Early litigation years can be financially tough",
+    "Long hours at corporate firms; slow cases and paperwork in courts",
+    "AI is changing research and document review"
+  ],
+  "competitionReality": {
+    "basis": "Law (NLUs)",
+    "signal": "92,344 CLAT 2026 registrations, up ~70% since 2023",
+    "reality": "~3,300–4,000 UG seats at NLUs"
+  },
+  "sceneIdeas": [
+    "Drafting a petition at midnight for a 10:30am listing",
+    "Your senior takes credit for your argument",
+    "A client wants you to bend the truth",
+    "Your case is adjourned for the fifth time"
+  ],
+  "sources": [
+    {
+      "label": "CLAT registrations (Careers360)",
+      "url": "https://law.careers360.com/articles/will-clat-2027-registrations-cross-1-lakh-what-numbers-say"
+    },
+    {
+      "label": "NLU placements (Careers360)",
+      "url": "https://law.careers360.com/articles/clat-scope-in-future"
+    }
+  ]
+}

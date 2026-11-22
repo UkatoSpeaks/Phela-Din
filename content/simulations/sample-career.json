@@ -1,0 +1,149 @@
+{
+  "id": "sample-career",
+  "title": "Office Associate",
+  "subtitle": "A placeholder week at a mid-size company in Pune",
+  "careerId": "sample-career",
+  "estimatedMinutes": 6,
+  "initialMeters": { "energy": 70, "stress": 30, "satisfaction": 50 },
+  "days": [
+    {
+      "day": 1,
+      "title": "Monday: first day at your desk",
+      "realTalk": "PLACEHOLDER: replace with a real quote from a working professional, e.g. \"Nobody tells you how much of the job is just keeping track of things.\"",
+      "scenes": [
+        {
+          "id": "d1-inbox",
+          "type": "choice",
+          "time": "9:30 AM",
+          "text": "You log in and find 23 unread emails. Your manager, Meera, wants a status update by noon. Where do you start?",
+          "choices": [
+            {
+              "text": "Sort every email into folders first, then start working",
+              "effects": { "energy": -5, "stress": -10, "satisfaction": 5 },
+              "tags": ["organised", "detail_oriented"],
+              "outcome": "Took 40 minutes, but now you know exactly what's on your plate."
+            },
+            {
+              "text": "Reply to the urgent-looking ones and skip the rest",
+              "effects": { "stress": 5, "satisfaction": 5 },
+              "tags": ["fast_paced", "independent"],
+              "outcome": "You cleared the fires. A few small things might slip through."
+            },
+            {
+              "text": "Walk over and ask Meera what matters most today",
+              "effects": { "energy": -5, "satisfaction": 10 },
+              "tags": ["people", "communication"],
+              "outcome": "Meera looks pleased. \"Just the vendor report. Ignore the rest for now.\""
+            }
+          ]
+        },
+        {
+          "id": "d1-summary",
+          "type": "ai_task",
+          "time": "11:15 AM",
+          "text": "Meera asks you to write a short update for her boss: the vendor report is two days late because the vendor changed their data format. Write 2–3 sentences she can forward as-is.",
+          "rubric": "Clear and polite. States the delay (2 days) and the reason (vendor changed data format) in plain language. Offers a next step or new date. No blame, no jargon, under 80 words.",
+          "placeholder": "Hi Arjun, a quick update on the vendor report…"
+        },
+        {
+          "id": "d1-colleague",
+          "type": "choice",
+          "time": "3:00 PM",
+          "text": "Riya from the next desk is stuck on a spreadsheet and asks for help. You still have your own report to finish before you leave.",
+          "choices": [
+            {
+              "text": "Help Riya. Your report can wait an hour",
+              "effects": { "energy": -10, "stress": 10, "satisfaction": 10 },
+              "tags": ["people", "teamwork"],
+              "setFlags": ["helped_riya"],
+              "outcome": "You fix her formula in 20 minutes. She's grateful, but now you're staying late."
+            },
+            {
+              "text": "Politely say you're swamped and point her to a tutorial",
+              "effects": { "stress": -5 },
+              "tags": ["independent", "focused"],
+              "setFlags": ["declined_riya"],
+              "outcome": "Riya says \"no worries\" and turns back to her screen. Your report gets done on time."
+            }
+          ]
+        },
+        {
+          "id": "d1-evening",
+          "type": "event",
+          "time": "6:45 PM",
+          "text": "You finally shut your laptop. The bus ride home is 50 minutes. You're tired, but you made it through day one.",
+          "effects": { "energy": -15 }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Tuesday: the big meeting",
+      "realTalk": "PLACEHOLDER: replace with a real quote, e.g. \"Meetings are where you find out whether anyone read your email.\"",
+      "scenes": [
+        {
+          "id": "d2-riya-returns-favour",
+          "type": "event",
+          "time": "9:20 AM",
+          "requiresFlag": "helped_riya",
+          "text": "Riya drops a cutting chai on your desk. \"For yesterday. Also, I heard the client is going to ask about the vendor delay. Thought you'd want a heads-up.\"",
+          "effects": { "energy": 10, "stress": -10, "satisfaction": 5 }
+        },
+        {
+          "id": "d2-riya-distant",
+          "type": "event",
+          "time": "9:20 AM",
+          "requiresFlag": "declined_riya",
+          "text": "Riya is chatting with the team about the client meeting. You catch the end of it: something about the vendor delay. Nobody fills you in.",
+          "effects": { "stress": 10 }
+        },
+        {
+          "id": "d2-meeting",
+          "type": "choice",
+          "time": "11:00 AM",
+          "text": "In the client call, the client asks sharply why the vendor report is late. Meera glances at you.",
+          "choices": [
+            {
+              "text": "Explain calmly what happened and give the new date",
+              "effects": { "stress": 10, "satisfaction": 15 },
+              "tags": ["communication", "pressure_handling"],
+              "outcome": "The client nods. Meera messages you afterwards: \"Well handled.\""
+            },
+            {
+              "text": "Stay quiet and let Meera answer",
+              "effects": { "stress": -5, "satisfaction": -10 },
+              "tags": ["cautious"],
+              "outcome": "Meera handles it, but you wonder if you missed a chance."
+            },
+            {
+              "text": "Offer to send a detailed written update after the call",
+              "effects": { "energy": -5, "satisfaction": 5 },
+              "tags": ["organised", "communication"],
+              "outcome": "The client agrees. One more thing on your to-do list, but it buys time."
+            }
+          ]
+        },
+        {
+          "id": "d2-wrapup",
+          "type": "choice",
+          "time": "5:30 PM",
+          "text": "It's the end of a long day. There's a pile of small tasks left. What do you do?",
+          "choices": [
+            {
+              "text": "Stay an extra hour and clear them all",
+              "effects": { "energy": -15, "stress": -5, "satisfaction": 5 },
+              "tags": ["detail_oriented", "hardworking"],
+              "outcome": "Empty to-do list. Tired, but satisfied."
+            },
+            {
+              "text": "Write tomorrow's list and leave on time",
+              "effects": { "energy": 5, "stress": 5 },
+              "tags": ["organised", "work_life_balance"],
+              "outcome": "You're home in time for dinner. The tasks will be there tomorrow."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

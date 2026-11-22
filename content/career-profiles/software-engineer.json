@@ -1,0 +1,89 @@
+{
+  "id": "software-engineer",
+  "title": "Software Engineer",
+  "dataAsOf": "Nov 2026",
+  "path": {
+    "steps": [
+      "B.Tech/BCA/MCA, or a self-taught portfolio",
+      "Internship",
+      "SDE-1"
+    ],
+    "duration": "4 years of degree is typical",
+    "note": "Skills matter more than the college for many startups."
+  },
+  "skills": [
+    "Programming (DSA, one or two languages)",
+    "System design",
+    "Git",
+    "Debugging",
+    "Reading other people's code",
+    "Cloud basics",
+    "Working with PMs and designers",
+    "Working with AI coding tools (increasingly)"
+  ],
+  "pay": {
+    "columns": [
+      "Stage",
+      "Range"
+    ],
+    "rows": [
+      {
+        "label": "Fresher",
+        "value": "~₹4–7 LPA at service companies; much higher at product companies"
+      },
+      {
+        "label": "Overall average (all levels)",
+        "value": "~₹8.9 LPA base (Indeed)"
+      },
+      {
+        "label": "Senior / top product companies",
+        "value": "₹20 LPA+, much more at top tech companies"
+      }
+    ]
+  },
+  "pros": [
+    "Huge range of employers and remote options",
+    "Skills transfer across industries; you can start without a top college",
+    "Fast salary growth for strong performers; job-hopping is normal"
+  ],
+  "cons": [
+    "Fresher hiring has shrunk sharply; AI tools are taking over simple coding and testing work",
+    "Constant upskilling; the stack you learn in college ages fast",
+    "Deadlines, on-call duty and production bugs can eat evenings",
+    "A lot of the job is meetings, unclear requirements and maintaining old code, not building cool things"
+  ],
+  "competitionReality": {
+    "basis": "Engineering / Tech",
+    "signal": "16,04,854 unique candidates for JEE Main 2026, the highest ever",
+    "reality": "Fresher IT hiring fell from ~6 lakh (FY22) to ~1.2 lakh (FY25)"
+  },
+  "sceneIdeas": [
+    "A vague ticket with no designs",
+    "A code review with 14 comments",
+    "A production bug at 7pm on Friday",
+    "A standup where you have nothing to report",
+    "AI wrote half the PR and now you must explain it"
+  ],
+  "sources": [
+    {
+      "label": "JEE Main 2026 unique candidates (reported in Careers360's JEE Main 2027 article)",
+      "url": "https://engineering.careers360.com/articles/total-registration-in-jee-main-2027"
+    },
+    {
+      "label": "Fresher IT hiring 80% drop (Business Today)",
+      "url": "https://www.businesstoday.in/technology/story/indian-its-fresher-hiring-slump-signals-structural-shift-not-just-slowdown-521374-2026-03-21"
+    },
+    {
+      "label": "IT share of fresher hiring 32% → 24% (Business Today / foundit)",
+      "url": "https://www.businesstoday.in/amp/jobs/story/ai-gccs-and-a-changing-job-market-indias-fresher-hiring-is-no-longer-just-an-it-story-whos-driving-the-shift-547654-2026-08-06"
+    },
+    {
+      "label": "Software engineer (Indeed)",
+      "url": "https://in.indeed.com/career/software-engineer/salaries/Remote"
+    },
+    {
+      "label": "Software engineer entry level (Payscale)",
+      "url": "https://www.payscale.com/research/IN/Job=Software_Engineer/Salary/3d540d01/Entry-Level"
+    }
+  ]
+}
